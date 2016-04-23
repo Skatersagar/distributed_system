@@ -32,6 +32,6 @@ public class UDPServer {
 		System.out.println("Received bad file descriptor!\nTerminating program...");
 		System.exit(-1);
 	    }
-	}
+	
     }
 }
