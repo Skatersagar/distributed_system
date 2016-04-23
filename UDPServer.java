@@ -61,6 +61,20 @@ public class UDPServer {
 	}
     
     previouslySent = new ProtogramPacket(-1, -1, previouslyReceived.asDatagram().getAddress(), previouslyReceived.asDatagram().getPort());
-    
+
+    while (true) {
+	    try {
+		DGSock.send(previouslySent.asDatagram());
+		DGSock.receive(packetDock);
+		DGSock.send(previouslySent.asDatagram());
+		previouslyReceived = ProtogramPacket.fromDatagram(packetDock);
+	    } catch ( SocketTimeoutException e ) {
+		break;
+	    } catch ( Exception e ) {
+		e.printStackTrace();
+	    }
+	}
+
+	System.out.println("Server process terminated.");
     }
 }
