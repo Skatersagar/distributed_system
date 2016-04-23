@@ -4,7 +4,7 @@ import java.io.*;
 public class UDPClient {
 
     public static void main (String[] args) {
-    DatagramSocket DGSock = null;
+	DatagramSocket DGSock = null;
 	InetAddress address = null;
 	ProtogramPacket previouslySent = new ProtogramPacket();
 	ProtogramPacket previouslyReceived = new ProtogramPacket();
@@ -118,9 +118,4 @@ public class UDPClient {
 	System.out.println("Client process terminated.");
 
     }
- 
-
-
-
-   }
 }
