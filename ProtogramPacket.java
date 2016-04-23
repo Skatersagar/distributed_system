@@ -2,6 +2,17 @@ import java.lang.Math.*;
 import java.net.*;
 import java.io.*;
 
+/*
+  Class: ProtogramPacket
+  Author: Jay Elrod
+  Description: This class is used to represent a packet of
+      custom type. It's fields will typically represent parsed
+      datagram information. ProtogramPackets can be transformed
+      into DatagramPackets and vice versa via ProtogramPacket
+      methods. This is necessary because a DatagramSocket only
+      accepts DatagramPackets and the class cannot be extended.
+ */
+
 public class ProtogramPacket {
     long start;
     long end;
