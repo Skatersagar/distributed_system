@@ -44,6 +44,21 @@ public class UDPServer {
 					       previouslyReceived.end,
 					       previouslyReceived.asDatagram().getAddress(),
 					       previouslyReceived.asDatagram().getPort());
+		while (true) {
+		    try {
+			DGSock.send(previouslySent.asDatagram());
+			DGSock.receive(packetDock);
+			previouslyReceived = ProtogramPacket.fromDatagram(packetDock);
+			break;
+		    } catch ( SocketTimeoutException e ) {
+		    } catch ( Exception e ) {
+			e.printStackTrace();
+		    }
+		}
+	    }
+	} catch ( Exception e ) {
+	    e.printStackTrace();
+	}
     
     }
 }
