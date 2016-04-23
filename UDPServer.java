@@ -38,6 +38,12 @@ public class UDPServer {
 			     && (previouslyReceived.payload.length > 0) ) {
 			    previouslyReceived.writePayload(dataOut);
 			    System.out.println("Upload " + ((previouslyReceived.end*100)/filesize*100)/100 + " percent complete.");
-			}
+		}
+
+		previouslySent = new ProtogramPacket(previouslyReceived.start,
+					       previouslyReceived.end,
+					       previouslyReceived.asDatagram().getAddress(),
+					       previouslyReceived.asDatagram().getPort());
+    
     }
 }
