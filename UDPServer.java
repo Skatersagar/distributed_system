@@ -16,6 +16,7 @@ public class UDPServer {
 		try { port = Integer.parseInt(args[0]); } catch ( Exception e ) {
 	    System.out.println("Usage: java UDPServer [port]");
 	    System.exit(-1);
+		}
 
 	    try {
 	    bbuff = new byte[512];
