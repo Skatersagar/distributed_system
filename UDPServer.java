@@ -13,5 +13,9 @@ public class UDPServer {
 		int port = 0;
 		long filesize = 0;
 
+		try { port = Integer.parseInt(args[0]); } catch ( Exception e ) {
+	    System.out.println("Usage: java UDPServer [port]");
+	    System.exit(-1);
+	}
     }
 }
