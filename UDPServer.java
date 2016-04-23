@@ -33,5 +33,11 @@ public class UDPServer {
 		System.exit(-1);
 	    }
 	
+		while (previouslyReceived.end != -1) {
+			if ( (previouslyReceived.end > 0) && ((long)previouslyReceived.end > ((FileOutputStream)(dataOut)).getChannel().size())
+			     && (previouslyReceived.payload.length > 0) ) {
+			    previouslyReceived.writePayload(dataOut);
+			    System.out.println("Upload " + ((previouslyReceived.end*100)/filesize*100)/100 + " percent complete.");
+			}
     }
 }
