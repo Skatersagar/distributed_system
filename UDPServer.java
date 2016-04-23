@@ -60,5 +60,7 @@ public class UDPServer {
 	    e.printStackTrace();
 	}
     
+    previouslySent = new ProtogramPacket(-1, -1, previouslyReceived.asDatagram().getAddress(), previouslyReceived.asDatagram().getPort());
+    
     }
 }
